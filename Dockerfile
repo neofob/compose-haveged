@@ -1,6 +1,6 @@
 # Provide entropy (haveged) to the host machine (when run as privileged)
 # Original source https://github.com/picoded/dockerfiles/tree/master/utility/haveged
-FROM ubuntu:18.04
+FROM ubuntu:20.04
 ENV	PKGS="rng-tools haveged" \
 	DEBIAN_FRONTEND=noninteractive
 
