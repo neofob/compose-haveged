@@ -1,0 +1,13 @@
+# Provide entropy (haveged) to the host machine (when run as privileged)
+# Original source https://github.com/picoded/dockerfiles/tree/master/utility/haveged
+FROM alpine:3.12.0
+ENV	PKGS="rng-tools haveged"
+
+# Install haveged
+RUN	apk update && \
+	apk add ${PKGS} && \
+	rm -rf /tmp/* /var/tmp/* /var/cache/apk/* /var/cache/distfiles/*
+
+# Runs haveged
+ENTRYPOINT ["haveged"]
+CMD ["-F"]

@@ -8,6 +8,14 @@ docker-compose build
 docker-compose up -d
 ```
 
+Build alpine-based docker image
+-------------------------------
+```
+cat Dockerfile.alpine | docker build -t neofob/haveged:alpine -
+```
+
+* Ubuntu-based image: 98.4MB
+* Alpine-based image: 6.17MB
 
 **References:** [`picoded Dockerfile`][0]
 
